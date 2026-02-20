@@ -32,9 +32,10 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
+  fs: {
+    allow: [
+      path.resolve(import.meta.dirname, "shared"),
+      path.resolve(import.meta.dirname, "client"),
+    ],
   },
-});
+},
